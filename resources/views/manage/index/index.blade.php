@@ -17,52 +17,10 @@
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
-                    服务状态
+                    欢迎回来！
                 </header>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-lg-2 col-sm-2 control-label">操作系统</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" value="Ubuntu 16.04 LTS" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-2 col-sm-2 control-label">服务器时间</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" value="{{ date('Y-m-d H:i:s') }}" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-2 col-sm-2 control-label">PHP版本</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" value="PHP7.1" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-2 col-sm-2 control-label">框架</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" value="Laravel 5.5" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-2 col-sm-2 control-label">Composer版本</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" value="1.3.2" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-lg-2 col-sm-2 control-label">访问ip</label>
-                            <div class="col-lg-5">
-                                <input type="text" class="form-control" value="{{ Request::getClientIp() }}" disabled>
-                            </div>
-                        </div>
-                    </form>
+                    {{ config('site.title') }} 版权所有
                 </div>
             </section>
         </div>

@@ -25,29 +25,16 @@
   <script src="{{ asset('/static/adminex/js/html5shiv.js') }}"></script>
   <script src="{{ asset('/static/adminex/js/respond.min.js') }}"></script>
   <![endif]-->
+    <style>
+        .panel{
+            background: #f1f1f1;
+        }
+    </style>
 </head>
 
 <body class="sticky-header">
 
 <section>
-    <!-- header section start-->
-    <div class="header-section">
-        <span style="height: 45px;line-height: 45px;padding-left: 2em;">{{ config('site.title') }} - 管理员平台</span>
-        <div class="menu-right">
-            <ul class="notification-menu">
-                <li>
-
-                </li>
-                <li style="height: 44px; line-height: 44px;">
-                    <a href="#" class="btn" data-toggle="dropdown" style="color: #000">当前帐号:{{ Auth::guard()->user()['name'] }}</a>
-                    <a style="color: black;margin-top: 0.1em" class="btn" href="{{ route('manage.logout') }}">退出登录</a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-    <!-- header section end-->
-
     <!-- left side start-->
     <div class="left-side sticky-left-side">
         <div class="left-side-inner">
@@ -65,10 +52,21 @@
                 <div class="col-md-12">
                     <!--breadcrumbs start -->
                     <ul class="breadcrumb panel">
-                        <li><a href="{{ route('manage') }}"><i class="fa fa-home"></i>主页</a></li>
-                        @section('breadcrumb')
+                        <li>
+                            <a href="{{ route('manage') }}">
+                                <i class="fa fa-home"></i>
+                                {{ config('site.title') }} - 管理员平台</a>
+                        </li>
+                        <div class="hidden">
+                            @section('breadcrumb')
 
-                        @show
+                            @show
+                        </div>
+                        <div class="" style="float: right;margin-top: -8px;">
+                            <li>
+                                <a style="color: black;" class="btn" href="{{ route('manage.logout') }}">退出登录</a>
+                            </li>
+                        </div>
                     </ul>
                     <!--breadcrumbs end -->
                 </div>

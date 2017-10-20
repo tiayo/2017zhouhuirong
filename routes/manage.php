@@ -1,6 +1,6 @@
 <?php
 
-$this->group(['namespace' => 'Manage', 'prefix' => 'manage'], function () {
+$this->group(['namespace' => 'Manage', 'prefix' => 'admin'], function () {
     $this->get('login', 'Auth\LoginController@showLoginForm')->name('manage.login');
     $this->post('login', 'Auth\LoginController@login')->name('manage.login');
     $this->get('logout', 'Auth\LoginController@logout')->name('manage.logout');

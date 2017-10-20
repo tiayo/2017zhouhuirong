@@ -17,12 +17,19 @@
     <script src="{{ asset('/static/adminex/js/html5shiv.js') }}"></script>
     <script src="{{ asset('/static/adminex/js/respond.min.js') }}"></script>
     <![endif]-->
+
+    <style>
+        input {
+            width: 49% !important;
+            float: left;
+            margin-right: 1%;
+        }
+    </style>
 </head>
 
 <body class="login-body">
 
 <div class="container">
-
     <div class="form-signin" action="index.html">
         <div class="login-wrap">
             <form method="post" action="{{ route('manage.login') }}">
