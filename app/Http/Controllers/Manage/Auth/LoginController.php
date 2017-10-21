@@ -9,10 +9,12 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/manage';
+    protected $redirectTo;
 
     public function __construct()
     {
+        $this->redirectTo = route('manage');
+
         $this->middleware('guest')->except('logout');
     }
 
