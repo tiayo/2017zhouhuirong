@@ -55,6 +55,15 @@ $this->group(['namespace' => 'Manage', 'prefix' => 'admin'], function () {
             $this->post('/order/update/{order_id}', 'OrderController@updatePost');
             $this->get('/order/destroy/{order_id}', 'OrderController@destroy')->name('order_destroy');
             $this->get('/order/status/{order_id}/{status}', 'OrderController@changeStatus')->name('order_status');
+
+            //文章模块
+            $this->get('/article/list/', 'ArticleController@listView')->name('article_list');
+            $this->get('/article/list/{keyword}', 'ArticleController@listView')->name('article_search');
+            $this->get('/article/add', 'ArticleController@addView')->name('article_add');
+            $this->post('/article/add', 'ArticleController@post');
+            $this->get('/article/update/{id}', 'ArticleController@updateView')->name('article_update');
+            $this->post('/article/update/{id}', 'ArticleController@post');
+            $this->get('/article/destroy/{id}', 'ArticleController@destroy')->name('article_destroy');
         });
     });
 });

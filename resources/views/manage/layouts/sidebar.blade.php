@@ -39,5 +39,14 @@
             <li id="nav_3_1"><a href="{{ route('order_list') }}">订单管理</a></li>
         </ul>
     </li>
+
+    <li class="menu-list active nav-active" id="nav_4">
+        <a href="" style="text-align: center;"> <span>花语管理</span>
+        </a>
+        <ul class="sub-menu-list">
+            <li id="nav_4_1"><a href="{{ route('article_list') }}">花语管理</a></li>
+            <li id="nav_4_2"><a href="{{ route('article_add') }}">添加花语</a></li>
+        </ul>
+    </li>
 </ul>
 <!--sidebar nav end-->
