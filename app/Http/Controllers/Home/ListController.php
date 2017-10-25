@@ -28,7 +28,7 @@ class ListController extends Controller
         //分类下所有商品（二级）
         foreach ($this->index->getCategoryChildren($category_id) as $catogory_child) {
             $data = $this->commodity->selectGet([
-                ['parent_id', $catogory_child['id']]
+                ['category_id', $catogory_child['id']]
             ], '*')->toarray();
             $comodities = array_merge($data, $comodities);
         }
@@ -36,6 +36,7 @@ class ListController extends Controller
         return view('home.list.list', [
             'category' => $category,
             'comodities' => $comodities,
+            'category_id' => $category_id,
         ]);
     }
 }

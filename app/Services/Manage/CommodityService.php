@@ -160,10 +160,10 @@ class CommodityService
         return $this->commodity->destroy($id);
     }
 
-    public function randCommodity()
+    public function randCommodity($num = 5)
     {
         return $this->commodity->randCommodity([
             ['status', 1],
-        ], 5, 'id', 'image_0');
+        ], $num, 'id', 'image_0');
     }
 }

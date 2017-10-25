@@ -188,9 +188,9 @@
                     </div>
                 </div>
                 <div class="banner">
-                    <img src="{{ asset('/style/home/picture/bigpic1.jpg') }}"/>
-                    <img src="{{ asset('/style/home/picture/bigpic2.jpg') }}"/>
-                    <img src="{{ asset('/style/home/picture/bigpic3.jpg') }}"/>
+                    @foreach($rand_commodity as $commodity)
+                        <a href="{{ route('home.commodity_view', ['commodity_id' => $commodity['id']]) }}"><img src="{{ $commodity['image_0'] }}"/></a>
+                    @endforeach
                 </div>
             </div>
             <div class="con-mid clearfix">

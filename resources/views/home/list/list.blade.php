@@ -27,4 +27,9 @@
     </div>
 @endsection
 @section('script')
+    <script>
+        $(document).ready(function () {
+            $('#category_0').removeClass('nav-on');
+        });
+    </script>
 @endsection
