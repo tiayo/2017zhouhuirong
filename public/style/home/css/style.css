@@ -1,6 +1,6 @@
 .header {
     height: 30px;
-    background-color: #e7e7e7;
+    background-color: #ffffff;
     line-height: 30px;
 }
 .header .header-con {
@@ -44,90 +44,115 @@
     background: url(../icon/pc.png) no-repeat center left;
     background-size: 15px;
 }
-.search {
-    position: relative;
-    height: 150px;
-    border-bottom: 3px solid #f00;
+.header .nowTime {
+    margin-left: 20px;
 }
-.search .logo {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    margin: auto 0;
-    width: 300px;
-    height: 100px;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 100px;
+.nav {
+    height: 45px;
+    background-color: #f3f3f3;
 }
-.search .logo img {
-    float: left;
-    width: 100%;
+.nav .nav-con {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
 }
-.search .search-con {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 600px;
-    height: 40px;
-    margin: auto;
-}
-.search .search-con .search-input {
+.nav .nav-con a {
     display: inline-block;
-    width: 503px;
-    height: 38px;
-    outline: none;
-    border: 1px solid #f00;
+    height: 100%;
+    padding: 0 10px;
     text-align: center;
-    line-height: 38px;
+    line-height: 60px;
+    color: orange;
+    line-height: 45px;
 }
-.search .search-con .search-button {
-    display: inline-block;
-    width: 90px;
-    height: 40px;
-    background-color: #f00;
+.nav .nav-con .nav-on {
     color: #fff;
-    outline: none;
-    border: 0;
-    cursor: pointer;
+    background-color: #666;
 }
-.goods {
+.goods1 {
     width: 1000px;
     margin: 50px auto;
 }
-.goods h1 {
+.goods1 h1 {
     width: 100%;
     height: 80px;
-    box-shadow: 1px 1px 5px #000;
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
     line-height: 80px;
 }
-.goods .goods-list {
+.goods1 .goods-list {
     width: 100%;
     margin-top: 20px;
 }
-.goods .goods-list .list {
+.goods1 .goods-list .list {
     float: left;
     width: 238px;
-    margin-right: 16px;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px 5px #000;
+    padding-right: 16px;
+    padding-bottom: 20px;
+    border-right: 1px dashed #999;
+    border-bottom: 1px dashed #999;
 }
-.goods .goods-list .list:nth-child(4n+4) {
-    margin-right: 0;
+.goods1 .goods-list .list:nth-child(1) {
+    width: 476px;
 }
-.goods .goods-list .list img {
+.goods1 .goods-list .list:nth-child(2n+3) {
+    padding-right: 0;
+    border-right: 0;
+}
+.goods1 .goods-list .list img {
     float: left;
     width: 100%;
-    height: 238px;
+    height: 228px;
 }
-.goods .goods-list .list a {
+.goods1 .goods-list .list:nth-child(1) img {
+    height: 476px;
+}
+.goods1 .goods-list .list a {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    float: left;
+    width: 96%;
+    height: 35px;
+    padding: 0 2%;
+    text-align: center;
+    line-height: 35px;
+}
+.goods1 .goods-list .list:nth-child(1) a {
+    height: 70px;
+    line-height: 70px;
+}
+.goods2 {
+    width: 1000px;
+    margin: 50px auto;
+}
+.goods2 h1 {
+    width: 100%;
+    height: 80px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 80px;
+}
+.goods2 .goods-list {
+    width: 100%;
+    margin-top: 20px;
+}
+.goods2 .goods-list .list {
+    float: left;
+    width: 233px;
+    padding: 0 8px;
+    border-right: 1px dashed #999;
+    border-bottom: 1px dashed #999;
+}
+.goods2 .goods-list .list:nth-child(4n+4) {
+    border-right: 0;
+}
+.goods2 .goods-list .list img {
+    float: left;
+    width: 100%;
+    height: 133px;
+}
+.goods2 .goods-list .list a {
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;

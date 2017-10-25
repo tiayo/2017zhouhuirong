@@ -18,14 +18,20 @@ class IndexController extends Controller
     public function index()
     {
         //商品
-        $commodities = $this->index->getByType(0, 6);
+        $commodities_1 = $this->index->getByType(1, 3);
+        $commodities_2 = $this->index->getByType(1, 3);
 
         //顶级栏目
         $parent_ctegory = $this->index->getCategoryParent();
 
+        //获取文章
+        $articles = $this->index->getArticle(6);
+
         return view('home.index.index', [
-            'commodities' => $commodities,
+            'commodities_1' => $commodities_1,
+            'commodities_2' => $commodities_2,
             'parent_ctegory' => $parent_ctegory,
+            'articles' => $articles,
         ]);
     }
 

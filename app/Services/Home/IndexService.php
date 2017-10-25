@@ -2,17 +2,23 @@
 
 namespace App\Services\Home;
 
-use App\Repositories\CategoryRepository;
-use App\Repositories\CommodityRepository;
+use App\Repositories\{
+    ArticleRepository,
+    CategoryRepository,
+    CommodityRepository
+};
 
 class IndexService
 {
-    protected $commodity, $category;
+    protected $commodity, $category, $article;
 
-    public function __construct(CommodityRepository $commodity, CategoryRepository $category)
+    public function __construct(CommodityRepository $commodity,
+                                CategoryRepository $category,
+                                ArticleRepository $article)
     {
         $this->commodity = $commodity;
         $this->category = $category;
+        $this->article = $article;
     }
 
     /**
@@ -48,6 +54,17 @@ class IndexService
         return $this->category->selectGet([
             ['parent_id', $parent_id],
         ], 'name', 'id');
+    }
+
+    /**
+     * 获取文章条数
+     *
+     * @param $num
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function getArticle($num)
+    {
+        return $this->article->get($num);
     }
 
     /**
