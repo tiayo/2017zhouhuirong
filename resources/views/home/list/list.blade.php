@@ -8,28 +8,19 @@
 @section('class', 'goods-list')
 
 @section('body')
-    @php
-        $category = $category_class->first($category_id)
-    @endphp
     <div class="fenlei">
         @include('home.layouts.header')
-        <div class="goods">
+        <div class="goods1">
             <h1>{{ $category['name'] }}</h1>
             <ul class="goods-list clearfix">
-                @foreach($category->commodity ?? [] as $commodity)
+                @foreach($comodities as $comodity)
                     <li class="list">
-                        <img src="{{ $commodity['image_0'] }}"/>
-                        <a href="{{ route('home.commodity_view', ['commodity_id' => $commodity['id']]) }}">{{ $commodity['name'] }}</a>
+                        <img src="{{ $comodity['image_0'] }}"/>
+                        <a href="{{ route('home.commodity_view', ['commodity_id' => $comodity['id']]) }}">
+                            <span>{{ $comodity['name'] }}</span>
+                            <strong>￥<em>{{ $comodity['price'] }}</em></strong>
+                        </a>
                     </li>
-                @endforeach
-
-                @foreach($index_class->getCategoryChildren($category_id) as $category_id_children)
-                        @foreach($commodiy_class->getByCategory($category_id_children['id']) ?? [] as $commodity)
-                            <li class="list">
-                                <img src="{{ $commodity['image_0'] }}"/>
-                                <a href="{{ route('home.commodity_view', ['commodity_id' => $commodity['id']]) }}">{{ $commodity['name'] }}</a>
-                            </li>
-                        @endforeach
                 @endforeach
             </ul>
         </div>

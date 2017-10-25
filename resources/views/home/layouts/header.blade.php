@@ -1,37 +1,29 @@
+@inject('index', 'App\Services\Home\IndexService')
+<style>
+    .nav .nav-con .nav-on {
+        color: #fff;
+        background-color: #666;
+    }
+</style>
+
 <div class="header">
     <div class="header-con">
         @if (Auth::check())
-            <a href="{{ route('home.logout') }}" class="login-button">{{ Auth::user()['name'] }} 退出</a>
-            <a href="{{ route('home.person') }}" class="pc-button" style="margin-right: 1em">个人中心</a>
+            <a href="{{ route('home.person') }}" class="pc-button" style="margin-right: 1em;">个人中心</a>
         @else
             <a href="{{ route('home.login') }}" class="login-button">登录/注册</a>
         @endif
-        <a href="{{route('home.car') }}" class="shopping-cart-button">购物车</a>
-
+        <a href="{{ route('home.car') }}" class="shopping-cart-button">购物车</a>
+        <span class="nowTime">您好，现在是<em></em></span>
     </div>
 </div>
-<div class="search">
-    <a href="/" class="logo">{{ config('site.title') }}</a>
-    <div class="search-con">
-        <form  method="get" action="{{ route('home.search') }}">
-            <input type="text" class="search-input" name="keyword" placeholder="输入关键词"/>
-            <button class="search-button">搜索</button>
-        </form>
-    </div>
-</div>
-<div class="index-bigpic swiper-container clearfix">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <a href="#"><img src="/style/home/images/bigpic1.jpg"/></a>
-        </div>
-        <div class="swiper-slide">
-            <a href="#"><img src="/style/home/images/bigpic2.jpg"/></a>
-        </div>
-        <div class="swiper-slide">
-            <a href="#"><img src="/style/home/images/bigpic3.jpg"/></a>
-        </div>
-        <div class="swiper-slide">
-            <a href="#"><img src="/style/home/images/bigpic4.jpg"/></a>
-        </div>
+<div class="nav">
+    <div class="nav-con">
+        <a href="/" class="nav-on">首页</a>
+        @foreach($index->getCategoryParent() as $category)
+            <a href="{{ route('home.category_view', ['id' => $category['id']]) }}">
+                {{ $category['name'] }}
+            </a>
+        @endforeach
     </div>
 </div>

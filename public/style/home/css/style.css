@@ -63,11 +63,9 @@
     text-align: center;
     line-height: 60px;
     color: orange;
-    line-height: 45px;
 }
 .nav .nav-con .nav-on {
-    color: #fff;
-    background-color: #666;
+    color: orangered;
 }
 .goods1 {
     width: 1000px;

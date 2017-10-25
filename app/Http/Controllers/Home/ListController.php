@@ -20,8 +20,22 @@ class ListController extends Controller
 
     public function view($category_id)
     {
+        $category = $this->category->first($category_id);
+
+        //分类下所有商品（一级）
+        $comodities = $this->commodity->selectGet([['category_id', $category_id]], '*')->toarray();
+
+        //分类下所有商品（二级）
+        foreach ($this->index->getCategoryChildren($category_id) as $catogory_child) {
+            $data = $this->commodity->selectGet([
+                ['parent_id', $catogory_child['id']]
+            ], '*')->toarray();
+            $comodities = array_merge($data, $comodities);
+        }
+
         return view('home.list.list', [
-            'category_id' => $category_id,
+            'category' => $category,
+            'comodities' => $comodities,
         ]);
     }
 }

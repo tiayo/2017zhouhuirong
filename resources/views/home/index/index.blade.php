@@ -155,36 +155,12 @@
             border-top: 1px dashed #999;
             line-height: 25px;
         }
-        .nav .nav-con .nav-on {
-            color: #fff;
-            background-color: #666;
-        }
     </style>
 @endsection
 
 @section('body')
     <div class="index">
-        <div class="header">
-            <div class="header-con">
-                @if (Auth::check())
-                    <a href="{{ route('home.person') }}" class="pc-button" style="margin-right: 1em;">个人中心</a>
-                @else
-                    <a href="{{ route('home.login') }}" class="login-button">登录/注册</a>
-                @endif
-                <a href="{{ route('home.car') }}" class="shopping-cart-button">购物车</a>
-                <span class="nowTime">您好，现在是<em></em></span>
-            </div>
-        </div>
-        <div class="nav">
-            <div class="nav-con">
-                <a href="/" class="nav-on">首页</a>
-                @foreach($parent_ctegory as $category)
-                    <a href="{{ route('home.category_view', ['id' => $category['id']]) }}">
-                        {{ $category['name'] }}
-                    </a>
-                @endforeach
-            </div>
-        </div>
+        @include('home.layouts.header')
         <div class="content clearfix">
             <div class="con-top clearfix">
                 <div class="index-nav">
