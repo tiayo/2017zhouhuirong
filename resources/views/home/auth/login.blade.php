@@ -56,6 +56,7 @@
 @section('body')
     @include('home.layouts.header')
     <form class="login" method="post" action="{{ route('home.login') }}">
+        {{ csrf_field() }}
         <div class="content">
             <h1>欢迎登录</h1>
             <div class="login-detial">
