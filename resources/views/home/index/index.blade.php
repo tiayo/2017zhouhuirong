@@ -205,8 +205,8 @@
                 </div>
                 @foreach($commodities_1 as $commodity)
                     <div class="mid-right">
-                        <h1>{{ mb_substr(strip_tags($commodity['description']), 0, 200, 'utf-8') }}...</h1>
                         <img src="{{ $commodity['image_0'] }}"/>
+                        <h1>{{ mb_substr(strip_tags($commodity['description']), 0, 200, 'utf-8') }}...</h1>
                         <div class="mask">
                             <a href="{{ route('home.commodity_view', ['commodity_id' => $commodity['id']]) }}">查看详情</a>
                         </div>
@@ -220,8 +220,8 @@
                 </div>
                 @foreach($commodities_2 as $commodity)
                     <div class="mid-right">
-                        <h1>{{ mb_substr(strip_tags($commodity['description']), 0, 200, 'utf-8') }}...</h1>
                         <img src="{{ $commodity['image_0'] }}"/>
+                        <h1>{{ mb_substr(strip_tags($commodity['description']), 0, 200, 'utf-8') }}...</h1>
                         <div class="mask">
                             <a href="{{ route('home.commodity_view', ['commodity_id' => $commodity['id']]) }}">查看详情</a>
                         </div>
