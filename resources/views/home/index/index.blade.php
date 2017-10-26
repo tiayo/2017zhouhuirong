@@ -13,13 +13,13 @@
         .index-nav {
             float: left;
             width: 300px;
-            background-color: orangered;
+            background-color: #746262;
             color: #fff;
             height: 469px;
         }
         .index-nav h1 {
             height: 30px;
-            background-color: orange;
+            background-color: #b1181a;
             text-align: center;
             line-height: 30px;
         }
@@ -116,7 +116,7 @@
             margin: auto;
             width: 80px;
             height: 35px;
-            background-color: orangered;
+            background-color: #b1181a;
             color: #fff;
             text-align: center;
             line-height: 35px;
@@ -233,7 +233,7 @@
                         @foreach($articles as $article)
                             <div class="swiper-slide">
                                 <div class="scenic-title">{{ $article['title'] }}</div>
-                                <div class="scenic-con">>{{ mb_substr(strip_tags($article['content']), 0, 200, 'utf-8') }}...</div>
+                                <div class="scenic-con">{{ mb_substr(strip_tags($article['content']), 0, 200, 'utf-8') }}...</div>
                                 <a href="{{ route('home.article', ['article_id' => $article['id']]) }}" class="scenic-details">查看详情</a>
                             </div>
                         @endforeach

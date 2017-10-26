@@ -25,7 +25,7 @@ $this->group(['namespace' => 'Home'], function () {
     $this->group(['middleware' => 'user_auth'], function () {
         $this->get('/car/list', 'CarController@view')->name('home.car');
         $this->post('/car/add/{commodity_id}', 'CarController@add')->name('home.car_add');
-        $this->get('/car/destory/{commodity_id}', 'CarController@destory')->name('home.car_destory');
+        $this->get('/car/destory/{car_id}', 'CarController@destory')->name('home.car_destory');
 
         //添加订单
         $this->get('/order/add', 'OrderController@addView')->name('home.order_add');

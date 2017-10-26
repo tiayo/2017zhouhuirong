@@ -112,18 +112,15 @@
                         @endforeach
                         <h3>数量：<em>{{ $list['num'] }}</em></h3>
                         <h4>合计：￥<em>{{ $list['price'] * $list['num'] }}</em></h4>
-                        <span class="del">x</span>
+                        <span class="del" onclick="location='{{ route('home.car_destory', ['car_id' => $list['id']]) }}'">x</span>
                     </li>
                 @endforeach
             </ul>
         </div>
     </form>
-    <script type="text/javascript">
-        $(".pro-del").click(function() {
-            $(this).parent().remove();
-        });
-        $(".del").click(function() {
-            $(this).parent().remove();
+    <script>
+        $(document).ready(function () {
+            $('#category_0').removeClass('nav-on');
         });
     </script>
 @endsection

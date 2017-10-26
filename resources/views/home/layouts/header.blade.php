@@ -16,6 +16,7 @@
     <div class="header-con">
         @if (Auth::check())
             <a href="{{ route('home.person') }}" class="pc-button" style="margin-right: 1em;">个人中心</a>
+            <a href="{{ route('home.logout') }}" class="login-button">退出</a>
         @else
             <a href="{{ route('home.login') }}" class="login-button">登录/注册</a>
         @endif
