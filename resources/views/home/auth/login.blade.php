@@ -25,6 +25,7 @@
             height: 35px;
             margin-top: 10px;
             outline: none;
+            text-indent: 10px;
         }
         .login-btn {
             width: 302px;
@@ -37,6 +38,8 @@
             height: 100%;
             outline: none;
             border: 0;
+            background-color: #b1181a;
+            color: #fff;
             cursor: pointer;
         }
         .registration {
@@ -53,7 +56,6 @@
 @section('body')
     @include('home.layouts.header')
     <form class="login" method="post" action="{{ route('home.login') }}">
-        {{ csrf_field() }}
         <div class="content">
             <h1>欢迎登录</h1>
             <div class="login-detial">

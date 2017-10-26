@@ -10,93 +10,86 @@
             padding: 10px 50px;
         }
         .content h1 {
-            height: 35px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #999;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 35px;
+            padding: 15px;
+            font-size: 24px;
         }
         .or-choose {
-            float: left;
-            width: 85px;
             margin-top: 20px;
-            margin-left: 80px;
-            border: 1px dashed #999;
+            background-color: #b1181a;
+            border: 1px solid #b1181a;
+            color: #fff;
         }
         .or-choose li {
             float: left;
-            width: 90%;
+            width: 25%;
             height: 35px;
-            margin: 0 5%;
-            border-bottom: 1px dashed #999;
             text-align: center;
             line-height: 35px;
             cursor: pointer;
         }
         .or-choose .on {
-            color: #f00;
+            color: #b1181a;
             font-weight: bold;
+            background-color: #fff
         }
         .or-details {
             display: none;
-            float: right;
-            width: 735px;
-            margin-top: 20px;
-            margin-right: 80px;
-            border: 1px dashed #999;
-        }
-        .or-details .or-list {
-            margin-bottom: 20px;
-        }
-        .or-details .or-list:nth-last-child(2) {
-            margin-bottom: 0;
+            margin-top: 10px;
         }
         .or-details li {
-            padding: 10px;
-            border-bottom: 1px dashed #999;
-        }
-        .or-details li img {
-            float: left;
-            width: 140px;
-            height: 140px;
-        }
-        .or-details li .det-l,
-        .or-details li .det-r {
-            float: left;
-            width: 230px;
-            height: 140px;
-            margin-left: 10px;
-        }
-        .or-details li .det-r {
-            float: left;
-            width: 315px;
-            height: 140px;
-            margin-left: 10px;
-        }
-        .or-details li .det-l {
-            border-right: 1px dashed #999;
+            margin-top: 10px;
+            border: 1px solid #b1181a;
         }
         .or-details li h2 {
-            float: left;
-            width: 100%;
-            padding: 2px 0;
+            height: 30px;
+            padding-left: 10px;
+            background-color: #b1181a;
+            color: #fff;
+            font-size: 16px;
+            line-height: 30px;
         }
-        .or-details li h2:nth-last-child(1) {
+        .or-info {
+            padding: 10px;
+            border-bottom: 1px solid #b1181a;
+        }
+        .or-info h3 {
+            float: left;
+            padding: 0 10px;
+            border-right: 1px dashed #b1181a;
+        }
+        .list {
+            float: left;
+            width: 19%;
             overflow: hidden;
-            height: 40px;
-            line-height: 20px;
+            margin-right: 1%;
         }
-        .or-details li h3 {
-            float: left;
-            width: 100%;
-            height: 35px;
-            margin-top: 10px;
-            border-top: 1px dashed #999;
-            color: #f00;
+        .list img {
+            display: block;
+            width: 199px;
+            height: 199px;
+        }
+        .list h3 {
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            width: 96%;
+            padding: 2%;
+            height: 40px;
+            font-size: 18px;
             font-weight: bold;
-            line-height: 35px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .list h4 {
+            color: #999;
+            text-align: center;
+        }
+        .list h5 {
+            margin: 10px 0;
+            color: #f00;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
         }
     </style>
 @endsection
@@ -104,128 +97,144 @@
 @section('body')
     <div class="pc">
         @include('home.layouts.header')
-            <div class="content clearfix">
-                <h1>我的订单</h1>
-                <ul class="or-choose">
-                    <li class="on">全部</li>
-                    <li>待发货</li>
-                    <li>待收货</li>
-                    <li>已完成</li>
-                </ul>
-                <ul class="or-details" style="display:block">
-                    @foreach($orders_all as $order)
-                        <li>
-                        @foreach($order->orderDetail as $list_detail)
-                            <div class="or-list clearfix">
-                                <img src="{{ $list_detail->commodity->image_0 }}"/>
-                                <div class="det-l">
-                                    <h2>商品名称：<em>{{ $list_detail->commodity->name }}</em></h2>
-                                    <h2>商品规格：<em>{{ $list_detail['remark'] }}</em></h2>
-                                    <h2>商品数量：<em>{{ $list_detail['num'] }}</em></h2>
-                                    <h2>送货方式：<em>顺丰快递</em></h2>
-                                    <h2>商品单号：<em>{{ $order['id'] }}</em></h2>
-                                </div>
-                                <div class="det-r">
-                                    <h2>付款方式：<em>微信支付</em></h2>
-                                    <h2>付款时间：<em>{{ $order['created_at'] }}</em></h2>
-                                    <h2>收件人：<em>{{ $order['name'] }}</em></h2>
-                                    <h2>联系方式：<em>{{ $order['phone'] }}</em></h2>
-                                    <h2>收件地址：<em>{{ $order['address'] }}</em></h2>
-                                </div>
-                            </div>
-                            @endforeach
-                            <h3>总计：￥<em>{{ $order['price'] }}</em></h3>
-                        </li>
-                    @endforeach
-                </ul>
-
-                <ul class="or-details">
-                    @foreach($orders_1 as $order)
-                        <li>
+        <div class="content clearfix">
+            <h1>我的订单</h1>
+            <ul class="or-choose clearfix">
+                <li class="on">全部</li>
+                <li>待发货</li>
+                <li>待收货</li>
+                <li>已完成</li>
+            </ul>
+            <ul class="or-details" style="display:block">
+                @foreach($orders_all as $order)
+                    <li>
+                        <h2>订单详情（<span>{{ config('site.order_status')[$order['status']] }}</span>）订单金额：￥<em>{{ $order['price'] }}</em></h2>
+                        <div class="or-info clearfix">
+                            <h3>订单编号：<em>{{ time().$order['id'] }}</em></h3>
+                            <h3>配送方式：<em>商家配送</em></h3>
+                            <h3>付款方式：<em>支付宝</em></h3>
+                            <h3>付款时间：<em>{{ $order['created_at'] }}</em></h3>
+                            <h3>收件人：<em>{{ $order['name'] }}</em></h3>
+                            <h3>联系电话：<em>{{ $order['phone'] }}</em></h3>
+                            <h3>收件地址：<em>{{ $order['address'] }}</em></h3>
+                        </div>
+                        <div class="or-list clearfix">
                             @foreach($order->orderDetail as $list_detail)
-                                <div class="or-list clearfix">
-                                    <img src="{{ $list_detail->commodity->image_0 }}"/>
-                                    <div class="det-l">
-                                        <h2>商品名称：<em>{{ $list_detail->commodity->name }}</em></h2>
-                                        <h2>商品规格：<em>{{ $list_detail['remark'] }}</em></h2>
-                                        <h2>商品数量：<em>{{ $list_detail['num'] }}</em></h2>
-                                        <h2>送货方式：<em>顺丰快递</em></h2>
-                                        <h2>商品单号：<em>{{ $order['id'] }}</em></h2>
-                                    </div>
-                                    <div class="det-r">
-                                        <h2>付款方式：<em>微信支付</em></h2>
-                                        <h2>付款时间：<em>{{ $order['created_at'] }}</em></h2>
-                                        <h2>收件人：<em>{{ $order['name'] }}</em></h2>
-                                        <h2>联系方式：<em>{{ $order['phone'] }}</em></h2>
-                                        <h2>收件地址：<em>{{ $order['address'] }}</em></h2>
-                                    </div>
+                                <div class="list">
+                                    <img src="{{ $list_detail->commodity->image_0 }}">
+                                    <h3>{{ $list_detail->commodity->name }}</h3>
+                                    <h4>商品规格：<em>{{ $list_detail['remark'] }}</em></h4>
+                                    <h4>商品数量：<em>{{ $list_detail['num'] }}</em></h4>
+                                    <h5>￥
+                                        <em>
+                                            {{ $list_detail['num'] * $list_detail['price'] }}
+                                        </em>
+                                    </h5>
                                 </div>
                             @endforeach
-                            <h3>总计：￥<em>{{ $order['price'] }}</em></h3>
-                        </li>
-                    @endforeach
-                </ul>
-
-                <ul class="or-details">
-                    @foreach($orders_2 as $order)
-                        <li>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+            <ul class="or-details">
+                @foreach($orders_1 as $order)
+                    <li>
+                        <h2>订单详情（<span>{{ config('site.order_status')[$order['status']] }}</span>）订单金额：￥<em>{{ $order['price'] }}</em></h2>
+                        <div class="or-info clearfix">
+                            <h3>订单编号：<em>{{ time().$order['id'] }}</em></h3>
+                            <h3>配送方式：<em>商家配送</em></h3>
+                            <h3>付款方式：<em>支付宝</em></h3>
+                            <h3>付款时间：<em>{{ $order['created_at'] }}</em></h3>
+                            <h3>收件人：<em>{{ $order['name'] }}</em></h3>
+                            <h3>联系电话：<em>{{ $order['phone'] }}</em></h3>
+                            <h3>收件地址：<em>{{ $order['address'] }}</em></h3>
+                        </div>
+                        <div class="or-list clearfix">
                             @foreach($order->orderDetail as $list_detail)
-                                <div class="or-list clearfix">
-                                    <img src="{{ $list_detail->commodity->image_0 }}"/>
-                                    <div class="det-l">
-                                        <h2>商品名称：<em>{{ $list_detail->commodity->name }}</em></h2>
-                                        <h2>商品规格：<em>{{ $list_detail['remark'] }}</em></h2>
-                                        <h2>商品数量：<em>{{ $list_detail['num'] }}</em></h2>
-                                        <h2>送货方式：<em>顺丰快递</em></h2>
-                                        <h2>商品单号：<em>{{ $order['id'] }}</em></h2>
-                                    </div>
-                                    <div class="det-r">
-                                        <h2>付款方式：<em>微信支付</em></h2>
-                                        <h2>付款时间：<em>{{ $order['created_at'] }}</em></h2>
-                                        <h2>收件人：<em>{{ $order['name'] }}</em></h2>
-                                        <h2>联系方式：<em>{{ $order['phone'] }}</em></h2>
-                                        <h2>收件地址：<em>{{ $order['address'] }}</em></h2>
-                                    </div>
+                                <div class="list">
+                                    <img src="{{ $list_detail->commodity->image_0 }}">
+                                    <h3>{{ $list_detail->commodity->name }}</h3>
+                                    <h4>商品规格：<em>{{ $list_detail['remark'] }}</em></h4>
+                                    <h4>商品数量：<em>{{ $list_detail['num'] }}</em></h4>
+                                    <h5>￥
+                                        <em>
+                                            {{ $list_detail['num'] * $list_detail['price'] }}
+                                        </em>
+                                    </h5>
                                 </div>
                             @endforeach
-                            <h3>总计：￥<em>{{ $order['price'] }}</em></h3>
-                        </li>
-                    @endforeach
-                </ul>
-
-                <ul class="or-details">
-                    @foreach($orders_4 as $order)
-                        <li>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+            <ul class="or-details">
+                @foreach($orders_2 as $order)
+                    <li>
+                        <h2>订单详情（<span>{{ config('site.order_status')[$order['status']] }}</span>）订单金额：￥<em>{{ $order['price'] }}</em></h2>
+                        <div class="or-info clearfix">
+                            <h3>订单编号：<em>{{ time().$order['id'] }}</em></h3>
+                            <h3>配送方式：<em>商家配送</em></h3>
+                            <h3>付款方式：<em>支付宝</em></h3>
+                            <h3>付款时间：<em>{{ $order['created_at'] }}</em></h3>
+                            <h3>收件人：<em>{{ $order['name'] }}</em></h3>
+                            <h3>联系电话：<em>{{ $order['phone'] }}</em></h3>
+                            <h3>收件地址：<em>{{ $order['address'] }}</em></h3>
+                        </div>
+                        <div class="or-list clearfix">
                             @foreach($order->orderDetail as $list_detail)
-                                <div class="or-list clearfix">
-                                    <img src="{{ $list_detail->commodity->image_0 }}"/>
-                                    <div class="det-l">
-                                        <h2>商品名称：<em>{{ $list_detail->commodity->name }}</em></h2>
-                                        <h2>商品规格：<em>{{ $list_detail['remark'] }}</em></h2>
-                                        <h2>商品数量：<em>{{ $list_detail['num'] }}</em></h2>
-                                        <h2>送货方式：<em>顺丰快递</em></h2>
-                                        <h2>商品单号：<em>{{ $order['id'] }}</em></h2>
-                                    </div>
-                                    <div class="det-r">
-                                        <h2>付款方式：<em>微信支付</em></h2>
-                                        <h2>付款时间：<em>{{ $order['created_at'] }}</em></h2>
-                                        <h2>收件人：<em>{{ $order['name'] }}</em></h2>
-                                        <h2>联系方式：<em>{{ $order['phone'] }}</em></h2>
-                                        <h2>收件地址：<em>{{ $order['address'] }}</em></h2>
-                                    </div>
+                                <div class="list">
+                                    <img src="{{ $list_detail->commodity->image_0 }}">
+                                    <h3>{{ $list_detail->commodity->name }}</h3>
+                                    <h4>商品规格：<em>{{ $list_detail['remark'] }}</em></h4>
+                                    <h4>商品数量：<em>{{ $list_detail['num'] }}</em></h4>
+                                    <h5>￥
+                                        <em>
+                                            {{ $list_detail['num'] * $list_detail['price'] }}
+                                        </em>
+                                    </h5>
                                 </div>
                             @endforeach
-                            <h3>总计：￥<em>{{ $order['price'] }}</em></h3>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+            <ul class="or-details">
+                @foreach($orders_4 as $order)
+                    <li>
+                        <h2>订单详情（<span>{{ config('site.order_status')[$order['status']] }}</span>）订单金额：￥<em>{{ $order['price'] }}</em></h2>
+                        <div class="or-info clearfix">
+                            <h3>订单编号：<em>{{ time().$order['id'] }}</em></h3>
+                            <h3>配送方式：<em>商家配送</em></h3>
+                            <h3>付款方式：<em>支付宝</em></h3>
+                            <h3>付款时间：<em>{{ $order['created_at'] }}</em></h3>
+                            <h3>收件人：<em>{{ $order['name'] }}</em></h3>
+                            <h3>联系电话：<em>{{ $order['phone'] }}</em></h3>
+                            <h3>收件地址：<em>{{ $order['address'] }}</em></h3>
+                        </div>
+                        <div class="or-list clearfix">
+                            @foreach($order->orderDetail as $list_detail)
+                                <div class="list">
+                                    <img src="{{ $list_detail->commodity->image_0 }}">
+                                    <h3>{{ $list_detail->commodity->name }}</h3>
+                                    <h4>商品规格：<em>{{ $list_detail['remark'] }}</em></h4>
+                                    <h4>商品数量：<em>{{ $list_detail['num'] }}</em></h4>
+                                    <h5>￥
+                                        <em>
+                                            {{ $list_detail['num'] * $list_detail['price'] }}
+                                        </em>
+                                    </h5>
+                                </div>
+                            @endforeach
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
         </div>
-        <script type="text/javascript">
-            $(".or-choose li").click(function() {
-                $(this).addClass('on').siblings().removeClass('on');
-                $(".or-details").hide().eq($(".or-choose li").index(this)).show();
-            });
-        </script>
+    </div>
+    <script type="text/javascript">
+        $(".or-choose li").click(function() {
+            $(this).addClass('on').siblings().removeClass('on');
+            $(".or-details").hide().eq($(".or-choose li").index(this)).show();
+        });
+    </script>
 @endsection
