@@ -58,8 +58,11 @@
         }
         .banner img {
             float: left;
-            width: 220px;
+            width: 30%;
             height: 206px;
+            margin-right: 3%;
+            overflow: hidden;
+            border: 1px solid #f1f1f1;
         }
         .banner img:nth-child(2) {
             margin: 0 15px;

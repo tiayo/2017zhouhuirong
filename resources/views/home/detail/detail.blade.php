@@ -47,7 +47,7 @@
             outline: none;
             border: 0;
             background-color: #f3f3f3;
-            color: orangered;
+            color: #b1181a;
             text-align: center;
             line-height: 35px;
             cursor: pointer;

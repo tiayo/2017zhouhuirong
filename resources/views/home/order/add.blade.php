@@ -19,7 +19,7 @@
         .orfl {
             float: left;
             padding: 10px 20px;
-            box-shadow: 1px 1px 5px orangered;
+            box-shadow: 1px 1px 5px #b1181a;
         }
         .orfl li {
             height: 32px;
@@ -46,7 +46,7 @@
             height: 96px;
             padding: 10px 20px;
             margin-left: 20px;
-            box-shadow: 1px 1px 5px orangered;
+            box-shadow: 1px 1px 5px #b1181a;
         }
         .orfm li {
             height: 25px;
@@ -56,7 +56,7 @@
             height: 96px;
             padding: 10px 20px;
             margin-left: 20px;
-            box-shadow: 1px 1px 5px orangered;
+            box-shadow: 1px 1px 5px #b1181a;
         }
         .orfr .all-price {
             height: 50px;
@@ -72,7 +72,7 @@
             height: 30px;
             margin-top: 10px;
             background-color: #fff;
-            box-shadow: 1px 1px 5px orangered;
+            box-shadow: 1px 1px 5px #b1181a;
             outline: none;
             border: 0;
             cursor: pointer;
@@ -84,8 +84,8 @@
         .or-details li {
             float: left;
             margin: 5px;
-            box-shadow: 1px 1px 5px orangered,
-            -1px -1px 5px orangered;
+            box-shadow: 1px 1px 5px #b1181a,
+            -1px -1px 5px #b1181a;
         }
         .or-details li img {
             float: left;

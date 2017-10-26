@@ -24,7 +24,7 @@
         }
         .all-price .tijiao {
             float: right;
-            background-color: orangered;
+            background-color: #b1181a;
             outline: none;
             border: 0;
             color: #fff;
@@ -41,8 +41,8 @@
             float: left;
             width: 240px;
             margin: 5px;
-            box-shadow: 1px 1px 5px orangered,
-            -1px -1px 5px orangered;
+            box-shadow: 1px 1px 5px #b1181a,
+            -1px -1px 5px #b1181a;
         }
         ul li img {
             display: block;
