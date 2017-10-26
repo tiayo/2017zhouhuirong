@@ -49,7 +49,7 @@
 }
 .nav {
     height: 45px;
-    background-color: #f3f3f3;
+    background-color: #b1181a;
 }
 .nav .nav-con {
     width: 1000px;
@@ -62,7 +62,7 @@
     padding: 0 10px;
     text-align: center;
     line-height: 60px;
-    color: orange;
+    color: #fff;
 }
 .nav .nav-con .nav-on {
     color: orangered;

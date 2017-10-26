@@ -14,7 +14,7 @@
         .choose {
             height: 45px;
             margin-top: 20px;
-            background-color: rgba(255, 69, 0, 0.5);
+            background-color: #b1181a;
         }
         .choose .ys,
         .choose .sl {
@@ -28,6 +28,7 @@
             height: 100%;
             padding-right: 20px;
             line-height: 45px;
+            color: #fff;
         }
         .choose .ys select,
         .choose .sl select {
@@ -57,6 +58,10 @@
         }
         .swiper-wrapper {
             height: 300px;
+        }
+        .swiper-wrapper img {
+            float: left;
+            width: 300px;
         }
     </style>
 @endsection
@@ -110,7 +115,8 @@
                loop: true,
                slidesPerView: 3,
                paginationClickable: true,
-               spaceBetween: 30
+               spaceBetween: 30,
+               autoplay: 2000
            });
 
            $(document).ready(function () {
