@@ -59,7 +59,7 @@
         .banner img {
             float: left;
             width: 220px;
-            height: 224px;
+            height: 206px;
         }
         .banner img:nth-child(2) {
             margin: 0 15px;
@@ -183,7 +183,10 @@
                 <div class="index-bigpic swiper-container clearfix">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a href="#"><img src="{{ asset('/style/home/picture/bigpic1.jpg') }}"/></a>
+                            <a href="#"><img src="{{ asset('/style/home/images/bg1.jpg') }}"/></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img src="{{ asset('/style/home/images/bg2.jpg') }}"/></a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +198,7 @@
             </div>
             <div class="con-mid clearfix">
                 <div class="banner-left">
-                    <img src="{{ asset('/style/home/picture/222.jpg') }}"/>
+                    <img src="{{ asset('/style/home/images/tiao1.jpg') }}"/>
                 </div>
                 @foreach($commodities_1 as $commodity)
                     <div class="mid-right">
@@ -210,7 +213,7 @@
 
             <div class="con-mid clearfix">
                 <div class="banner-left">
-                    <img src="{{ asset('/style/home/picture/222.jpg') }}"/>
+                    <img src="{{ asset('/style/home/images/tiao2.jpg') }}"/>
                 </div>
                 @foreach($commodities_2 as $commodity)
                     <div class="mid-right">
